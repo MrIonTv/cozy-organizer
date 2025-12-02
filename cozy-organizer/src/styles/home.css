@@ -1,0 +1,44 @@
+
+#home {
+  width: 95%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  height: 85vh;
+}
+
+#welcome {
+  margin-top: 250px;
+  font-size: 2em;
+  font-weight: 700;
+  padding-left: 20px;
+  font-style: italic;
+  text-align: start;
+  line-height: 0.1em;
+  min-width: 430px;
+  align-items: end;
+}
+
+#dashboard {
+  border-radius: 20px;
+  height: 80%;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+}
+
+#dashboard button.page-tool {
+  background-color: var(--palete1-secondary);
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+#dashboard button.page-tool img {
+  height: 80px;
+  width: 70px;
+  align-self: center;
+}

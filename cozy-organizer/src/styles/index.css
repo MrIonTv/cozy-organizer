@@ -1,0 +1,117 @@
+:root {
+  --green: #00bf63;
+  --red: #ff3131;
+
+  --palete1-letters: #ffffff;
+  --palete1-primary: #33442c;
+  --palete1-secondary: #667c59;
+  --palete1-terciary: #7a9669;
+  --palete1-cuaternary: #b7cfa9;
+
+
+  font-family: "Libre Baskerville", serif;
+
+  color-scheme: normal;
+  color: var(--palete1-letters);
+  background-color: var(--palete1-primary);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  min-width: 950px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  gap: 20px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+#background-overlay {
+  background: url("../assets/backgrounds/montezuma-oropendola.jpg") no-repeat center center fixed ;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: brightness(50%);
+}
+
+.w-icon {
+  filter: invert(100%) sepia(3%) saturate(320%) hue-rotate(334deg) brightness(119%) contrast(100%);
+}
+
+.selected-icon {
+  filter: brightness(0) saturate(100%) invert(97%) sepia(10%) saturate(961%) hue-rotate(4deg) brightness(87%) contrast(90%);
+}
+
+.page-tool img {
+  width: 50px;
+  height: 50px;
+}
+
+#page-head {
+  background-color: var(--palete1-primary);
+  z-index: 5;
+  height: 80px;
+  width: 100%;
+  border-radius: 0 0 40px 40px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+#page-head #short-cuts {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-left: 40px;
+}
+
+#page-head #date-time {
+  text-align: center;
+  color: var(--palete1-letters);
+  font-weight: bolder;
+  font-size: 1.2em;
+  font-kerning: none;
+  line-height: 4px;
+}
+
+#page-head.menu-opened {
+  grid-template-columns: 2fr 1fr;
+}
+
+#page-head.menu-opened #date-time {
+  text-align: right;
+  margin-right: 10%;
+
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+}
