@@ -1,8 +1,7 @@
 import { useState } from 'react'
 
-import Tool from './components/PageTool'
-import PageHead from './components/PageHead'
 import Home from './pages/Home'
+import Profile from './components/ProfileManager'
 
 function App() {
 
@@ -10,6 +9,7 @@ function App() {
     <>
       <div id="background-overlay" />
         <Home />
+        <Profile />
     </>
   )
 }

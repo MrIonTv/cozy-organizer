@@ -1,0 +1,14 @@
+{
+    "notes": [
+        {
+        "id": "note1",
+        "title": "Grocery List",
+        "content": "Milk, Eggs, Bread, Butter"
+        },
+        {
+        "id": "note2",
+        "title": "Meeting Notes",
+        "content": "Discuss project timeline and deliverables."
+        }
+    ]
+}

@@ -10,7 +10,7 @@ import Daylies from '../assets/icons/consultar-calendario.png'
 import Goals from '../assets/icons/objetivos.png'
 import Graphics from '../assets/icons/grafico-histograma.png'
 
-const PageHead = ({ opened = true, selected }) => {
+const PageHead = ({ opened = false, selected }) => {
     const Clock = () => {
         var [date, setDate] = useState(new Date());
 
