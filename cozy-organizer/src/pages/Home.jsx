@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import Container from "../components/Container.jsx"
-import PageHead from "../components/PageHead"
-import Tool from "../components/PageTool"
+import Container from "../components/gui/Container.jsx"
+import PageHead from "../components/gui/PageHead.jsx"
+import Tool from "../components/gui/PageTool.jsx"
 
 import Profile from '../assets/icons/tarjeta-de-identificacion.png'
 import Transactions from '../assets/icons/presupuesto-de-tareas-de-lista-de-verificacion.png'
@@ -14,7 +14,7 @@ import '../styles/home.css'
 
 const Home = () => {
   return (
-    <>
+    <Container>
       <PageHead />
       <main>
         <div id="home">
@@ -24,27 +24,29 @@ const Home = () => {
           </div>
           <div id="dashboard">
               <Tool>
-                  <img src={Profile} alt="Mi perfil" className={"w-icon"} />
+                  <Link to={"/profiles"}>
+                    <img src={Profile} alt="Mi perfil" title="Mis Perfiles" className={"w-icon"} />
+                  </Link>
               </Tool>
                             <Tool>
-                  <img src={Transactions} alt="Mi perfil" className={"w-icon"} />
+                  <img src={Transactions} alt="Transacciones" title="Transacciones" className={"w-icon"} />
               </Tool>
               <Tool>
-                  <img src={Pendings} alt="Mi perfil" className={"w-icon"} />
+                  <img src={Pendings} alt="Pendientes"  title="Pendientes" className={"w-icon"} />
               </Tool>
               <Tool>
-                  <img src={Daylies} alt="Mi perfil" className={"w-icon"} />
+                  <img src={Daylies} alt="Diarias" title="Diarias" className={"w-icon"} />
               </Tool>
               <Tool>
-                  <img src={Goals} alt="Mi perfil" className={"w-icon"} />
+                  <img src={Goals} alt="Metas" title="Metas" className={"w-icon"} />
               </Tool>
               <Tool>
-                  <img src={Graphics} alt="Mi perfil" className={"w-icon"} />
+                  <img src={Graphics} alt="Grafica" title="Grafica" className={"w-icon"} />
               </Tool>
           </div>
         </div>
       </main>
-    </>
+    </Container>
   );
 };
 

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
-export default function Container({ children }) {
+export default function Container({ fading = false, children }) {
   const [inactive, setInactive] = useState(false);
 
   useEffect(() => {
+    if (!fading) return;
     let timer;
 
     const resetTimer = () => {
@@ -29,7 +30,7 @@ export default function Container({ children }) {
       window.removeEventListener("click", resetTimer);
       window.removeEventListener("scroll", resetTimer);
     };
-  }, []);
+  }, [fading]);
 
   return (
     <div className={inactive ? "fade-out" : "fade-in"}>

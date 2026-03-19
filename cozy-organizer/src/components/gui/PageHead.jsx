@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 import Tool from './PageTool.jsx';
 
-import Profile from '../assets/icons/tarjeta-de-identificacion.png'
-import Transactions from '../assets/icons/presupuesto-de-tareas-de-lista-de-verificacion.png'
-import Pendings from '../assets/icons/computadora-portatil.png'
-import Daylies from '../assets/icons/consultar-calendario.png'
-import Goals from '../assets/icons/objetivos.png'
-import Graphics from '../assets/icons/grafico-histograma.png'
+import Profile from '../../assets/icons/tarjeta-de-identificacion.png'
+import Transactions from '../../assets/icons/presupuesto-de-tareas-de-lista-de-verificacion.png'
+import Pendings from '../../assets/icons/computadora-portatil.png'
+import Daylies from '../../assets/icons/consultar-calendario.png'
+import Goals from '../../assets/icons/objetivos.png'
+import Graphics from '../../assets/icons/grafico-histograma.png'
 
 const PageHead = ({ opened = false, selected }) => {
     const Clock = () => {
