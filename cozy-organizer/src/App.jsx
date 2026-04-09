@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 
 import Home from './pages/Home'
 import AppConfig from './pages/AppConfig'
+import Transactions from './pages/Transacctions'
 import { loadDirectoryHandle, selectProfilesFolder } from './components/logic/FileHandler';
 import LoadPage from './components/gui/LoadPage';
 import { detectProfiles, readProfile } from './components/logic/ProfileManager';
@@ -55,9 +56,21 @@ export default function App() {
     const profiles = await detectProfiles(folderHandle);
     setProfilesList(profiles);
     
-    const aP = await readProfile(profiles[0]);
-    setActualProfile(aP);
-    setBackground(aP.background);
+
+    let profileToUse = await readProfile(profiles[0]);
+
+    const lastSelected = localStorage.getItem('lastSelectedProfile');
+    if (lastSelected) {
+      for (const p of profiles) {
+        const actual = await readProfile(p);
+        if (actual.userName == lastSelected) {
+          profileToUse = actual;
+          break;
+        }
+      }
+    }
+    setActualProfile(profileToUse);
+    setBackground(profileToUse.background);
   }
 
   useEffect(() => {
@@ -77,7 +90,7 @@ export default function App() {
           <Routes>
             <Route path='/home' element={<Home/>}/>
             <Route path='/profiles' element={<AppConfig backgrounds={backgrounds} setBackground={setBackground} background={background} fHandle={folderHandle} setFHandle={setFolderHandle} actualProfile={actualProfile} setActualProfile={setActualProfile} profileList={profileList} setProfileList={setProfilesList}/>}/>
-
+            <Route path='/transactions' element={<Transactions/>}/>
 
             {"Default"}
             <Route path="/" element={<Navigate to="/home" replace />} />

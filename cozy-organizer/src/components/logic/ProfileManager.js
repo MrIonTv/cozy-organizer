@@ -41,7 +41,6 @@ export async function saveProfile(folderHandle, name = "Nuevo Perfil", bgNumber 
 }
 
 export async function updateProfile(folderHandle, profile, newData) {
-    console.log(profile)
     const profileDirectory = await folderHandle.getDirectoryHandle(profile.userName);
     const pFile = await profileDirectory.getFileHandle(pFileName);
     const writable = await pFile.createWritable();

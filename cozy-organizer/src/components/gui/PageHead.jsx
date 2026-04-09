@@ -42,10 +42,10 @@ const PageHead = ({ opened = false, selected }) => {
             {opened && 
             <div id="short-cuts">
                 <Tool>
-                    <img src={Profile} alt="Mi perfil" className={selected !== 0 ? "w-icon" : "selected-icon"} />
+                    <img src={Profile} alt="Perfiles" title="Perfiles" className={selected !== 0 ? "w-icon" : "selected-icon"} />
                 </Tool>
                 <Tool>
-                    <img src={Transactions} alt="Transacciones" className={selected !== 1 ? "w-icon" : "selected-icon"} />
+                    <img src={Transactions} alt="Transacciones" title="Transacciones" className={selected !== 1 ? "w-icon" : "selected-icon"} />
                 </Tool>
                 <Tool>
                     <img src={Pendings} alt="Pendientes" className={selected !== 2 ? "w-icon" : "selected-icon"} />

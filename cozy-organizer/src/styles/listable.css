@@ -1,0 +1,86 @@
+.elements-table {
+    background-color: transparent;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: bolder;
+}
+
+.elements-table>div {
+    padding: 25px;
+}
+
+.elements-title {
+    display: grid;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--palete1-letters-emphasis);
+    border: 1px solid var(--palete1-cuaternary);
+}
+
+.elements-title>div {
+    padding: 0.5rem;
+    background-color: var(--palete1-terciary);
+}
+
+.listable-row {
+    background-color: var(--palete1-primary);
+    height: 100px;
+    border: 1px solid var(--palete1-cuaternary);
+    column-gap: 2px;
+}
+.listable-row>div {
+    height: 100%;
+    background-color: var(--palete1-secondary);
+    place-content: center;
+}
+.listable-row>div>div {
+    margin-left: 2px;
+}
+
+.elements {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 60vh;
+
+}
+
+.elements .cb {
+    text-align: center;
+}
+
+.elements .cb input[type="checkbox"] {
+    appearance: none;
+    /* quita estilo nativo */
+    -webkit-appearance: none;
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 25%;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.elements .cb input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 25%;
+}
+
+.elements button {
+    background-color: transparent;
+    width: 75px;
+    height: 75px;
+    border: transparent;
+    padding-right: 5px;
+}
+
+.elements button:hover {
+    cursor: pointer;
+}

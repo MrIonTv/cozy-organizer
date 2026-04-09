@@ -47,7 +47,18 @@ const AppConfig = ({ backgrounds, background, setBackground, fHandle, setFHandle
                 setPNames(names);
             });
         }
-}, [profileList]);
+    }, [profileList]);
+
+    async function onProfileChange(e) {
+        const selectedName = e.target.value;
+        const selectedProfile = profileList.find((p, index) => pNames[index] === selectedName);
+        
+
+        const profile = await readProfile(selectedProfile)
+        setBackground(profile.background);
+        setActualProfile(profile);
+        localStorage.setItem('lastSelectedProfile', selectedName);
+    }
 
     return (
         <Container>
@@ -58,23 +69,29 @@ const AppConfig = ({ backgrounds, background, setBackground, fHandle, setFHandle
                 marginTop: "5vh",
             }}>
                 <div id='board'>
-                    <div className='board-item'>
-                        Carpeta de Perfiles: {fHandle.name}
+                    <div className='board-item board-sliced'>
+                        <div className='board-item'>
+                            Carpeta de Perfiles: 
+                            <p>{fHandle.name}</p>
+                        </div>
                         <button onClick={onSetNewFHandle}> Cambiar Carpeta </button>
                     </div>
-                    <div className='board-item'>
-                        Perfiles
-                        
-                        <select name="selectedProfile" id="profiles">
-                        {pNames &&
-                            pNames.map((name) => (
-                                <option key={name} value={name}>{name}</option>
-                            ))    
-                        }
-                        </select>
+
+                    <div className='board-item board-sliced'>
+                        <div className='board-item'>
+                            Perfiles
+                            <select name="selectedProfile" id="profiles" onChange={onProfileChange} value={actualProfile?.userName}>
+                                {pNames &&
+                                    pNames.map((name) => (
+                                        <option key={name} value={name}>{name}</option>
+                                    ))
+                                }
+                            </select>
+                        </div>
+                        <button>Nuevo Perfil</button>
                     </div>
                     <div className='board-item'
-                        style={{display:"flex"}}>
+                        style={{display:"flex", marginRight:"4vh", marginLeft:"4vh", overflowY:"hidden"}}>
                         {backgrounds.map(bg => (
                             <img className='miniatures'
                                 key={bg}
@@ -94,6 +111,7 @@ const AppConfig = ({ backgrounds, background, setBackground, fHandle, setFHandle
                                 border: "2px solid purple",
                             }}
                         />
+                        
                     </div>
                 </div>
                 

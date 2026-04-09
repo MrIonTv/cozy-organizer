@@ -25,23 +25,25 @@ const Home = () => {
           <div id="dashboard">
               <Tool>
                   <Link to={"/profiles"}>
-                    <img src={Profile} alt="Mi perfil" title="Mis Perfiles" className={"w-icon"} />
+                    <img src={Profile} alt="Perfiles" title="Perfiles" className="w-icon" />
                   </Link>
               </Tool>
-                            <Tool>
-                  <img src={Transactions} alt="Transacciones" title="Transacciones" className={"w-icon"} />
+              <Tool>
+                <Link to={"/transactions"}>
+                  <img src={Transactions} alt="Transacciones" title="Transacciones" className="w-icon" />
+                </Link>
               </Tool>
               <Tool>
-                  <img src={Pendings} alt="Pendientes"  title="Pendientes" className={"w-icon"} />
+                  <img src={Pendings} alt="Pendientes"  title="Pendientes" className="w-icon" />
               </Tool>
               <Tool>
-                  <img src={Daylies} alt="Diarias" title="Diarias" className={"w-icon"} />
+                  <img src={Daylies} alt="Diarias" title="Diarias" className="w-icon" />
               </Tool>
               <Tool>
-                  <img src={Goals} alt="Metas" title="Metas" className={"w-icon"} />
+                  <img src={Goals} alt="Metas" title="Metas" className="w-icon" />
               </Tool>
               <Tool>
-                  <img src={Graphics} alt="Grafica" title="Grafica" className={"w-icon"} />
+                  <img src={Graphics} alt="Grafica" title="Grafica" className="w-icon" />
               </Tool>
           </div>
         </div>

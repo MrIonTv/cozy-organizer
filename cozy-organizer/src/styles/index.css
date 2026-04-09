@@ -3,7 +3,7 @@
   --red: #ff3131;
 
   --palete1-letters: #ffffff;
-  --palete1-letters-emphasis: #000;
+  --palete1-letters-emphasis: #03220b;
   --palete1-primary: #33442c;
   --palete1-secondary: #667c59;
   --palete1-terciary: #7a9669;
@@ -26,14 +26,15 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  width: 100vw;
+  min-width: 780px;
 }
 
 main {
   display: flex;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
   gap: 20px;
+  height: 100vh;
 }
 
 button {
